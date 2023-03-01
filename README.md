@@ -1,3 +1,3 @@
 # 42seoul
 
-42서울 피신과 본과정 모음
+42seoul subject
