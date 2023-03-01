@@ -1,3 +1,3 @@
 # 42seoul
 
-42seoul subject
+42seoul project repository
