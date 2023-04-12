@@ -1,9 +1,19 @@
-#include "get_next_line.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jihonkim <jihonkim@student.42seoul.>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/03 17:08:43 by jihonkim          #+#    #+#             */
+/*   Updated: 2022/07/20 11:43:40 by jihonkim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "get_next_line.h"
 
 size_t	ft_strlen(const char *str)
 {
-	// printf("len\n");
 	size_t	i;
 
 	i = 0;
@@ -14,12 +24,10 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-
-char	*ft_strchr(const char *str, int c)
+char	*ft_strchr(char *str, int c)
 {
 	int	i;
 
-	// printf("chr\n");
 	i = 0;
 	if (!str)
 	{
@@ -31,7 +39,6 @@ char	*ft_strchr(const char *str, int c)
 	{
 		if (str[i] == (char) c)
 		{
-			//printf("str = %s\n", (char *)&str[i]);
 			return ((char *)&str[i]);
 		}		
 		i++;
@@ -39,29 +46,38 @@ char	*ft_strchr(const char *str, int c)
 	return (0);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	sub_join(char *str, char *s1, char *s2)
 {
-	size_t	s1_len;
-	size_t	s2_len;
-	size_t	i;
-	size_t	str_count;
-	char	*str;
+	int	i;
+	int	str_count;
 
-	if (!s1 || !s2)
-		return (0);
-	i = 0;
 	str_count = 0;
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	//printf("s1=%zu, s2=%zu\n", s1_len, s2_len);
-	str = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
-	if (!str)
-		return (0);
+	i = 0;
 	while (s1[i] != '\0')
 		str[str_count++] = s1[i++];
 	i = 0;
 	while (s2[i] != '\0')
 		str[str_count++] = s2[i++];
 	str[str_count] = '\0';
+}
+
+char	*ft_strjoin(char *s1, char *s2)
+{
+	char	*str;
+
+	if (!s1)
+	{
+		s1 = (char *)malloc(sizeof(char) * 1);
+		if (!s1)
+			return (NULL);
+		s1[0] = '\0';
+	}
+	if (!s1 || !s2)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!str)
+		return (0);
+	sub_join(str, s1, s2);
+	free(s1);
 	return (str);
 }
