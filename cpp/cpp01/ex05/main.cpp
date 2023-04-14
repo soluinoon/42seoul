@@ -1,7 +1,12 @@
 #include "Harl.hpp"
 
 int main() {
-	std::string cmd = "DEBUG";
 	Harl harl = Harl();
-	harl.complain(cmd);
+
+	harl.complain("DEBUG");
+	harl.complain("");
+	harl.complain("INFO");
+	harl.complain("WARNING");
+	harl.complain("ERROR");
+	
 }

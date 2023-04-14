@@ -1,6 +1,10 @@
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
+#ifndef _DEBUG
+#define new new(_CLIENT_BLOCK,__FILE__,__LINE)
+#endif
+
 std::string inputString(std::string field) {
 	std::string temp;
 
@@ -18,7 +22,7 @@ std::string inputString(std::string field) {
 }
 
 bool isAllDigitAndAllowedSymbol(std::string str) {
-	for (int i = 0; i < str.length(); i++) {
+	for (int i = 0; i < (int)str.size(); i++) {
 		if (!isdigit(str[i]) && str[i] != '#' && str[i] != '+' && str[i] != '*') {
 			return false;
 		}
@@ -71,6 +75,8 @@ void addContactToPhoneBook(PhoneBook& phoneBook) {
 int main() {
 	PhoneBook phoneBook = PhoneBook();
 	std::string cmd;
+	char* str = (char *)malloc(sizeof(char) * (4 + 1));
+	std::cout << str << std::endl;
 
 	phoneBook.init();
 	while (true) {

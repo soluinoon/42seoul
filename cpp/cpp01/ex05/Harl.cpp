@@ -12,7 +12,7 @@ void Harl::debug() {
 }
 
 void Harl::info() {
-	std::cout << "char *name is dynamic allocated string to name jihongkim" << std::endl;
+	std::cout << "\"char *name\" is dynamic allocated string to name jihongkim" << std::endl;
 }
 
 void Harl::warning() {
@@ -25,12 +25,16 @@ void Harl::error() {
 
 void Harl::complain(std::string level) {
 	std::string cmds[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void (Harl::*fPtr)(void) = nullptr;
 	
 	for (int i = 0; i < 4; i++) {
 		if (cmds[i] == level) {
-			void (Harl::*fPtr)() = funcPtr[i];
-			fptr();
+			fPtr = funcPtr[i];
 		}
 	}
-	
+	if (fPtr == nullptr) {
+		std::cout << "unknown command" << std::endl;
+	} else {
+		(this->*fPtr)();
+	}
 }

@@ -1,9 +1,9 @@
-NAME = phonebook
+NAME = zombie
 CXX = clang++
 CXXFLAGS = -Wall -Wextra -Werror
-SRCS = Contact.cpp main.cpp PhoneBook.cpp
+SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJS = $(SRCS:.cpp=.o)
-INCLUDES = Contact.hpp PhoneBook.hpp
+INCLUDES = HumanA.hpp HumanB.hpp Weapon.hpp
 
 $(NAME): $(OBJS)
 	$(CXX) $(OBJS) $(CXXFLAGS) -o $(NAME)
@@ -12,6 +12,7 @@ $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 all : $(NAME)
+
 
 clean:
 	rm -rf $(OBJS)
