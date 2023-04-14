@@ -10,8 +10,7 @@ class Harl {
 		void info();
 		void warning();
 		void error();
-		void (*funcPtr[4])();
-		std::map<std::string, void (Harl::*)()> funcMap;
+		void (Harl::*funcPtr[4])();
 	public:
 		Harl();
 		void complain(std::string level);

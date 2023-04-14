@@ -1,15 +1,10 @@
 #include "Harl.hpp"
 
 Harl::Harl() {
-	this->funcPtr[0] = this->debug();
-	this->funcPtr[1] = Harl::info;
-	this->funcPtr[2] = Harl::warning;
-	this->funcPtr[3] = Harl::error;
-
-	this->funcMap.insert(std::pair<std::string, void (Harl::*)()>("DEBUG", funcPtr[0]));
-	this->funcMap.insert(std::pair<std::string, void (Harl::*)()>("INFO", funcPtr[1]));
-	this->funcMap.insert(std::pair<std::string, void (Harl::*)()>("WARNING", funcPtr[2]));
-	this->funcMap.insert(std::pair<std::string, void (Harl::*)()>("ERROR", funcPtr[3]));
+	this->funcPtr[0] = &Harl::debug;
+	this->funcPtr[1] = &Harl::info;
+	this->funcPtr[2] = &Harl::warning;
+	this->funcPtr[3] = &Harl::error;
 }
 
 void Harl::debug() {
@@ -29,6 +24,13 @@ void Harl::error() {
 }
 
 void Harl::complain(std::string level) {
-	void (Harl::*levelPtr)() = funcMap.at(level);
-	levelPtr();
+	std::string cmds[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	
+	for (int i = 0; i < 4; i++) {
+		if (cmds[i] == level) {
+			void (Harl::*fPtr)() = funcPtr[i];
+			fptr();
+		}
+	}
+	
 }
