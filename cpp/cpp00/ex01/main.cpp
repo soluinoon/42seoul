@@ -18,7 +18,7 @@ std::string inputString(std::string field) {
 }
 
 bool isAllDigitAndAllowedSymbol(std::string str) {
-	for (int i = 0; i < str.length(); i++) {
+	for (int i = 0; i < (int)str.size(); i++) {
 		if (!isdigit(str[i]) && str[i] != '#' && str[i] != '+' && str[i] != '*') {
 			return false;
 		}

@@ -1,7 +1,7 @@
 NAME = phonebook
 CXX = clang++
-CXXFLAGS = -Wall -Wextra
-SRCS = Contact.cpp Main.cpp PhoneBook.cpp
+CXXFLAGS = -Wall -Wextra -Werror
+SRCS = Contact.cpp main.cpp PhoneBook.cpp
 OBJS = $(SRCS:.cpp=.o)
 INCLUDES = Contact.hpp PhoneBook.hpp
 
