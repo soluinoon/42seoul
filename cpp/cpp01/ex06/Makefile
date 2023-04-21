@@ -1,13 +1,14 @@
-NAME = replace
+NAME = harl
 CXX = clang++
 CXXFLAGS = -Wall -Wextra -Werror
-SRCS = main.cpp
+SRCS = main.cpp Harl.cpp
 OBJS = $(SRCS:.cpp=.o)
+INCLUDES = Harl.hpp
 
 $(NAME): $(OBJS)
 	$(CXX) $(OBJS) $(CXXFLAGS) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(INCLUDES)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 all : $(NAME)
