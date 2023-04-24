@@ -1,6 +1,7 @@
 #include "Weapon.hpp"
 
 Weapon::Weapon(std::string type) {
+	std::cout << "call type param construct" << std::endl;
 	this->type = type;
 }
 

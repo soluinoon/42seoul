@@ -1,6 +1,6 @@
 NAME = zombie
-CXX = clang++
-CXXFLAGS = -Wall -Wextra -Werror
+CXX = c++
+CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 SRCS = zombieHorde.cpp Zombie.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 INCLUDES = Zombie.hpp

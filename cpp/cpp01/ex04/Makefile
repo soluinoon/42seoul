@@ -1,6 +1,6 @@
 NAME = replace
-CXX = clang++
-CXXFLAGS = -Wall -Wextra -Werror
+CXX = c++
+CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 

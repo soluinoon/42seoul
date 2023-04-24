@@ -1,6 +1,6 @@
 NAME = zombie
-CXX = clang++
-CXXFLAGS = -Wall -Wextra -Werror
+CXX = c++
+CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJS = $(SRCS:.cpp=.o)
 INCLUDES = HumanA.hpp HumanB.hpp Weapon.hpp

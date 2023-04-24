@@ -1,6 +1,6 @@
 NAME = harl
-CXX = clang++
-CXXFLAGS = -Wall -Wextra -Werror
+CXX = c++
+CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 SRCS = main.cpp Harl.cpp
 OBJS = $(SRCS:.cpp=.o)
 INCLUDES = Harl.hpp
