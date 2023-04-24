@@ -37,20 +37,19 @@ void Harl::complain(std::string level) {
 	switch (cmdIndex) {
 		case 0:
 			fPtr = &Harl::debug;
-			break;
+			(this->*fPtr)();
 		case 1:
 			fPtr = &Harl::info;
-			break;
+			(this->*fPtr)();
 		case 2:
 			fPtr = &Harl::warning;
-			break;
+			(this->*fPtr)();
 		case 3:
 			fPtr = &Harl::error;
+			(this->*fPtr)();
 			break;
 		default:
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 			return;
 	}
-	(this->*fPtr)();
-
 }
