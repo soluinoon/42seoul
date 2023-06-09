@@ -15,22 +15,22 @@
   </tr>
   <tr>
     <td><a href="https://github.com/soluinoon/42seoul/tree/main/libft">✅ libft</a></td>
-    <td>✅ get_next_line</td>
-    <td>✅ ft_printf</td>
+    <td><a href="https://github.com/soluinoon/42seoul/tree/main/get_next_line">✅ get_next_line</a></td>
+    <td><a href="https://github.com/soluinoon/42seoul/tree/main/ft_printf">✅ ft_printf</a></td>
   </tr>
   <tr>
-    <td>✅ born2beroot</td>
-    <td>✅ minitalk</td>
-    <td>✅ push_swap</td>
+    <td><a href="https://github.com/soluinoon/42seoul/tree/main/born2beroot">✅ born2beroot</a></td>
+    <td><a href="https://github.com/soluinoon/42seoul/tree/main/minitalk">✅ minitalk</a></td>
+    <td><a href="https://github.com/soluinoon/42seoul/tree/main/push_swap">✅ push_swap</a></td>
   </tr>
   <tr>
-    <td>✅ philosopher</td>
-    <td>✅ so_long</td>
-    <td>✅ minishell</td>
+    <td><a href="https://github.com/soluinoon/42seoul/tree/main/philosopher">✅ philosopher</a></td>
+    <td><a href="https://github.com/soluinoon/42seoul/tree/main/so_long">✅ so_long</a></td>
+    <td><a href="https://github.com/soluinoon/42seoul/tree/main/minishell">✅ minishell</a></td>
   </tr>
   <tr>
-    <td>✅ cub3d</td>
-    <td>✅ c++</td>
+    <td><a href="https://github.com/soluinoon/42seoul/tree/main/cub3d">✅ cub3d</a></td>
+    <td><a href="https://github.com/soluinoon/42seoul/tree/main/cpp">✅ c++</a></td>
     <td></td>
   </tr>
 </table>
